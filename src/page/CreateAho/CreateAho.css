@@ -1,0 +1,168 @@
+.container {
+    width: 40%;
+    margin: auto;
+    padding: 1% 0 2% 0;
+
+    display: flex;
+    justify-content: space-around;
+}
+
+section {
+    padding: 0 12px 12px 12px;
+}
+
+.image {
+    width: 200px;
+    height: 200px;
+
+    background: url(../../Image/free-icon-technical-support-4233818.png) no-repeat center;
+    background-size: 200px;
+
+    display: inline-block;
+}
+
+.rightPage {
+    width: auto;
+    height: auto;
+
+    /* border: 1px solid black; */
+
+    display: inline-block;
+}
+
+.titelP {
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    color: #31435b;
+
+    margin-top: 0;
+    
+    padding-top: 5px;
+}
+
+.formTitel {
+   font-size: 16px;
+   color: #b5b5b5;
+   padding-top: 0;
+   margin-top: 4px;
+   line-height: 1.4em; 
+}
+
+.serviceTask,
+    .podServiceTitel,
+    .taskNameTitel,
+    .usernameTitel, 
+    .emailTitel, 
+    .phoneTitel, 
+    .companyTitel, 
+    .influenceTitel, 
+    .influenceDescrTitel, 
+    .UrgencyTitel, 
+    .UrgencyDescrTitel,
+    .descriptionTitel {
+    
+    height: 20px;
+    /* transform: translateY(-18px) scale(0.75); */
+    color: rgba(0, 0, 0, .6);
+    line-height: 20px;
+    letter-spacing: normal;
+    font-size: 14px;
+    min-height: 8px;
+    transition: .3s cubic-bezier(0.25, 0.8, 0.5, 1);
+    padding: 0;
+    margin: 0;
+}
+
+.service, .username, .email, .phone, .company, .influence, .Urgency, .taskName, .podService {
+    padding: 4px 0 2px;
+    color: rgba(0, 0, 0, .87);
+    max-height: 32px;
+    flex: 1 1 auto;
+    line-height: 20px;
+    /* max-width: 100%; */
+    min-width: 0px;
+    width: 100%;
+    height: 80%;
+    /* padding-right: 30px; */
+
+    margin-bottom: 20px;
+
+    border: none;
+    border-bottom: 1.5px solid SlateGrey;
+}
+
+.influenceDescr, .UrgencyDescr, .description {
+    padding: 4px 0 2px;
+    color: rgba(0, 0, 0, .87);
+    flex: 1 1 auto;
+    line-height: 20px;
+    min-width: 0;
+    width: 100%;
+    height: 80%;
+
+    margin-bottom: 20px;
+
+    border: none;
+    border-bottom: 1.5px solid SlateGrey;
+
+    resize: none;
+}
+
+
+.username, .email, .phone, .influenceDescr, .UrgencyDescr {
+    padding-left: 4px;
+    width: 99%;
+}
+
+.username:focus, .email:focus, .phone:focus, .influenceDescr:focus, .UrgencyDescr:focus {
+    outline: none;
+
+    border-bottom: 3px solid SlateGrey;
+    /* border-radius: 25px; */
+    transition: 0.1s ;
+}
+
+.sendTask {
+    /* text-transform: uppercase; */
+    color: #fff;
+    background-color: RoyalBlue	;
+
+    /* border: 1px solid black; */
+    border: 0;
+
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+
+    text-align: center;
+
+    margin-left: 50%;
+
+    transform: translate(-50%);
+
+
+
+    width: 150px;
+    height: 35px;
+
+    border-radius: 10px;
+}
+
+.sendTask:hover {
+    cursor: pointer;
+}
+
+/* body {
+    overflow: hidden;
+} */
+
+.container input:hover {
+    cursor: pointer;
+}
+
+.container select:hover {
+    cursor: pointer;
+}
+
+.container textarea:hover {
+    cursor: pointer;
+}

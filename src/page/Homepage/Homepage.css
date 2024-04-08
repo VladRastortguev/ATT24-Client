@@ -1,0 +1,214 @@
+/* font-family: "Inter", sans-serif; */
+
+body {
+    margin: 0;
+}
+
+.allContainer {
+    width: 201.5vh;
+    height: 350px;
+
+    /* margin-left: -10px; */
+
+    /* margin-left: -7.7px; */
+    margin-top: -15.7px;
+
+    background: url(../../Image/div.sc-ipZHIp.svg) no-repeat top center;
+    background-size: 100%;
+
+    position: relative;
+}
+
+.logo img {
+    margin-top: 5px;
+}
+
+li {
+    list-style-type: none;
+}
+
+.navbarHead {
+    display: flex;
+    justify-content: space-between;
+}
+
+.findOrLogin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.findOrLogin li {
+    margin: 4px 10px 0 0;
+}
+
+.findOrLogin a {
+    text-decoration: none;
+}
+
+.findBtn {
+    margin-top: 13px !important;
+}
+
+.findBtn a {
+    display: inline-block;
+
+    width: 30px;
+    height: 30px;
+
+    border-radius: 50%;
+
+    border: 1px solid white;
+    background-color: #EBECF0;
+
+    text-align: center;
+}
+
+.findBtn img {
+    margin-top: 50%;
+    transform: translate(0, -50%);
+}
+
+.loginBtn {
+    text-align: center;
+
+    margin-bottom: 5px;
+}
+
+.loginBtn a {
+    display: inline-block;
+
+    padding: 7.6px 17.89px;
+
+    border: 1px solid white;
+    background: white;
+
+    font-family: "Inter", sans-serif;
+    font-weight: bold;
+
+    border-radius: 16px;
+}
+
+
+
+
+.containerSupportAtt {
+    width: 50%;
+
+    /* border: 1px solid black; */
+
+    background-color: #fff;
+
+    position: absolute;
+    top: 40%;
+    left: 50%;
+
+    transform: translate(-50%, 0);
+
+    box-shadow: 
+        0 0 0 1px darkgray,
+        0 0 0 1px darkgray;
+
+    /* overflow-y: scroll; */
+}
+
+.supporFooterContainer {
+    width: 80%;
+    margin: auto;
+}
+
+h3, h5, p, li, .supportList {
+    margin: 0;
+    padding: 0;
+
+    font-family: 'Inter', sans-serif;
+
+    color: #172B4D;
+}
+
+.supportTitel {
+    text-align: center;
+
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+.supportText {
+    padding-top: 10px;
+    font-size: 14px;
+
+    letter-spacing: -0.1px;
+}
+
+.sendWeMessage {
+    margin-top: 30px;
+}
+
+.sendWeMessage img {
+    margin-bottom: -3px;
+}
+
+.sendWeMessage:hover {
+    cursor: pointer;
+}
+
+.supportList {
+    margin-top: 30px;
+}
+
+.supportList li {
+    margin-top: 30px;
+    height: 70px;
+
+    border: 1px solid darkgrey;
+
+    border-radius: 5px;
+
+    background: #FAFBFC;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.supportList li .innerBlock {
+    width: 95%;
+
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.supportList li h5 {
+    margin-top: 10px;
+
+    font-size: 16px;
+
+    color: #0074E0;
+
+    display: inline-block;
+}
+
+.supportList li .titel1C {
+    margin-top: 8px;
+    display: inline-block;
+}   
+
+.multiInnerblock {
+    display: flex;
+    flex-direction: column;
+}
+
+.getToTaskBtn {
+    margin-top: 18px;
+
+    font-weight: bold;
+}
+
+.supportList li:hover {
+    cursor: pointer;
+}
+
+.blockAHO {
+    margin-bottom: 90px;
+}

@@ -1,0 +1,250 @@
+.DetailsAllContainer {
+    position: relative;
+}
+
+.DetailsHeader {
+    margin-top: -10px;
+    padding: 10px 0;
+
+    /* background: rgb(2,0,36);
+    background: linear-gradient(228deg, rgba(2,0,36,1) 0%, rgba(26,108,227,1) 62%, rgba(0,212,255,1) 100%); */
+
+    background: url(../../Image/div.sc-ipZHIp.svg) no-repeat top center;
+    background-size: 100%;
+
+    height: 270px;
+}
+
+.DetailsContainer,
+.DetailsHeaderContainer {
+    width: 95%;
+    margin: auto;    
+}
+
+.DetailsContainer {
+    width: 90%;
+    height: 100px;
+
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.DetailsCommentBlock {
+    width: 90%;
+    height: 500px;
+
+    margin: auto;
+
+    border: 1px solid darkgray;
+    
+    position: absolute;
+
+    top: 170px;
+
+    background: white;
+    
+    overflow-y: scroll;
+}
+
+.DetailsNavbar {
+    display: flex;
+
+    justify-content: space-between;
+}
+
+.CommentPushContainer {
+    width: 90%;
+    height: 100px;
+
+    margin: auto;
+
+    border: 1px solid darkgray;
+
+    position: absolute;
+
+    display: flex;
+
+    text-align: center;
+    /* justify-content: center; */
+
+    top: 670px;
+}
+
+.CommentList {
+    display: flex;
+    flex-direction: column;
+}
+
+.CommentNotMyList {
+    text-align: start;
+    margin-left: 30px;
+}
+
+.CommentMyList {
+    text-align: end;
+    margin-right: 30px;
+}
+
+.CommentItemUsername {
+    font-size: 13px;
+}
+
+.CommnetItemText {
+    font-size: 16px;
+}
+
+.CommentItemDate {
+    font-size: 10px;
+}
+
+.CommentPustArea {
+    resize: none;
+
+    height: 95px;
+}
+
+.pushCommentBtn {
+    display: inline-block;
+
+    width: 90px;
+    height: 30px;
+
+    margin: 65px 5px 5px 24px;
+
+    border: none;
+    border-radius: 5px;
+
+    background: blue;
+
+    color: white;
+
+    font-weight: bold;
+
+    /* margin-bottom: -30px; */
+}
+
+.pushCommentBtn:hover {
+    cursor: pointer;
+}
+
+.DetailsLink ul {
+    margin: 6px 40px 0 0;
+}
+
+.DetailsLink ul:hover {
+    cursor: pointer;
+}
+
+.DetailsLink ul li {
+    width: 40px;
+    height: 4px;
+
+    background: rgba(16, 89, 255, 0.7);
+
+    margin-bottom: 7.5px;
+}
+
+.unShowDetailsBlock {
+    transition: 7ms;
+
+    display: none;
+}
+
+.showDetailsBlock {
+    transition: 7ms;
+
+    position: fixed;
+
+    top: 0;
+    bottom: 0;
+    left: 1200px;
+
+    background: white;
+
+    border-left: 2px solid black;
+
+    width: 100%;
+}
+
+.detailsPreContainer {
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+}
+
+.showDetailsBlock button {
+    width: 90px;
+    height: 30px;
+
+    color: white;
+
+    background: red;
+
+    border: none;
+    border-radius: 5px;
+
+    margin-left: 20px;
+    margin-top: 15px;
+}
+
+.showDetailsBlock button:hover {
+    cursor: pointer;
+}
+
+.detailsItemName,
+    .detailsItemService,
+    .detailsItemStage,
+    .detialsItemInitiator,
+    .detailsItemExecutor,
+    .detailsDateOfCreate,
+    .detailsDateOfCompilet,
+    .detailsNumbertask,
+    .detailsOrganization {
+    display: flex;
+    justify-content: space-between;
+
+    margin: 20px 0 20px 0;
+
+    max-width: 20%;
+}
+
+.detailsItemName h5,
+    .detailsItemService h5,
+    .detailsItemStage h5,
+    .detialsItemInitiator h5,
+    .detailsItemExecutor h5,
+    .detailsDateOfCreate h5,
+    .detailsDateOfCompilet h5,
+    .detailsNumbertask h5,
+    .detailsOrganization h5 {
+    font-weight: normal;
+    font-size: 16px;
+
+    margin-left: 10px;
+}
+
+.detailsItemName p,
+    .detailsItemService p,
+    .detailsItemStage p,
+    .detialsItemInitiator p,
+    .detailsItemExecutor p,
+    .detailsDateOfCreate p,
+    .detailsDateOfCompilet p,
+    .detailsNumbertask p,
+    .detailsOrganization p {
+    font-weight: bold;
+
+    font-size: 16px;
+
+    margin-left: 10px;
+}
+
+.detailsPreContainer {
+    height: 90%;
+}

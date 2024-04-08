@@ -1,0 +1,191 @@
+.CreateAllContainer{
+    position: relative;
+}
+
+.CreateHeader {
+    margin-top: -10px;
+    padding: 10px 0;
+
+    /* background: rgb(2,0,36);
+    background: linear-gradient(228deg, rgba(2,0,36,1) 0%, rgba(26,108,227,1) 62%, rgba(0,212,255,1) 100%); */
+
+    background: url(../../Image/div.sc-ipZHIp.svg) no-repeat top center;
+    background-size: 100%;
+
+    height: 270px;
+}
+
+.CreateContainer,
+.CreateHeaderContainer {
+    width: 95%;
+    margin: auto;
+}
+
+.CreateContainer {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center; 
+}
+
+.CreateBlock {
+    width: 40%;
+    height: 600px;
+
+    display: inline-block;
+
+    border: 1px solid darkgray;
+
+    position: absolute;
+
+    top: 170px;
+
+    background-color: white;
+}
+
+.CreateTitel {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+}
+
+.CreateTitel p {
+    margin-top: 20px;
+
+    font-weight: bold;
+
+    font-size: 22px;
+
+}
+
+.CreaeteInputs {
+    width: 100%;
+    height: 75%;
+
+    display: flex;
+
+    /* border: 1px solid black; */
+}
+
+.CreateOnlyTitelBlock {
+    width: 50%; 
+
+    display: flex;
+    flex-direction: column;
+
+    /* border: 1px solid black; */
+}
+
+.CreateOnlyTitelBlock div {
+    display: inline-block;
+    width: 100%;
+}
+
+.CreateTitelBlockNoAuth div {
+    height: 9.8%;
+    max-height: 10%;
+
+    display: flex;
+
+    border: 1px solid black;
+}
+
+.CreateTitelBlockNoAuth p {
+    margin-top: 10px;
+
+    margin-left: 10px;
+}
+
+.CreateTitelBlockAuth div{
+    height: 14%;
+    max-height: 14.2%;
+
+    /* border: 1px solid black; */
+}
+
+.CreateTitelBlockAuth p {
+    margin-top: 22px;
+    margin-left: 10px;
+}
+
+.CreateOnlyInputBlock {
+    width: 50%;
+
+    display: flex;
+    flex-direction: column;
+
+    /* border: 1px solid black; */
+}
+
+.CreateOnlyInputBlock div {
+    width: 100%;
+
+    display: inline-block;
+
+    /* border: 1px solid black; */
+}
+
+.CreateOnlyInputBlock select {
+    width: 90%;
+    height: 30px;
+}
+
+.CreateOnlyInputBlock input {
+    width: 87.5%;
+    height: 30px;
+} 
+
+.CreateOnlyInputBlock textarea {
+    width: 88%;
+    height: 30px;
+
+    resize: none;
+}
+
+.CreateInputBlocNokAuth div {
+    height: 9.8%;
+    max-height: 10%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.CreateInputBlockAuth div {
+    height: 14%;
+    max-height: 14.2%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+.CreateSendTaskBtn {
+    position: absolute;
+
+    top: 90%;
+    left: 50%;
+
+    transform: translate(-50%);
+}
+
+.CreateDivAuth {
+    display: none !important;
+}
+
+.CreateSendTaskBtn {
+    width: 110px;
+    height: 37px;
+
+    background: rgba(16, 89, 255, 0.7);
+
+    color: white;
+
+    border: none;
+    border-radius: 5px;
+}

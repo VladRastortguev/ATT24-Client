@@ -1,0 +1,248 @@
+.loginContainer {
+    background: rgb(213, 207, 207);
+
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.loginFrame {
+    position: relative;
+
+    width: 350px;
+    height: 500px;
+
+    border-radius: 10px;
+
+    /* border: 1px solid black; */
+
+    background: 
+        -webkit-linear-gradient(
+            rgba(35, 43, 85, 0.75),
+            rgba(35, 43, 85, 0.95)),
+        url(https://dl.dropboxusercontent.com/u/22006283/preview/codepen/clouds-cloudy-forest-mountain.jpg) no-repeat center center;
+    
+    background:
+        linear-gradient(
+            rgba(35, 43, 85, 0.75),
+            rgba(35, 43, 85, 0.95)),
+        url(https://dl.dropboxusercontent.com/u/22006283/preview/codepen/clouds-cloudy-forest-mountain.jpg) no-repeat center center;
+}
+
+/* .loginChecbox ul {
+    display: flex;
+
+    justify-content: start;
+    align-items: center;
+
+    margin: 0 0 0 0;
+    padding: 30px 0 20px 20px;
+} */
+/* 
+.loginChecbox li {
+    padding-left: 10px;
+
+    padding-bottom: 10px;
+
+    font-size: 18px;
+} */
+
+.loginChecbox a {
+    display: inline-block;
+
+    color: #fff;
+
+    padding-bottom: 10px;
+}
+
+.singInActive {
+    border-bottom: 2px solid #1059FF;
+}
+
+.singUpActive {
+    padding-bottom: 2px;
+}
+
+
+.singIn,
+    .singUp {
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.singContainer {
+    /* position: relative; */
+
+    margin-top: 30px;
+
+    width: 80%;
+    height: 100%;
+
+    display: flex;
+
+    justify-content: start;
+
+    flex-direction: column;
+}
+
+.singContainer p {
+    transition: .5s ease;
+
+    font-weight: 400;
+    font-size: 13px;
+
+    padding: 0 0 10px 15px;
+
+    color: black;
+}
+
+.singContainer input {
+    transition: .5s ease;
+
+    display: inline-block;
+
+    /* color: #fff; */
+
+    font-size: 13px;
+
+    height: 35px;
+
+    padding-left: 8px;
+    margin-bottom: 20px;
+
+    /* border: none; */
+    border-radius: 5px;
+
+    /* background: rgba(255, 255, 255, 0.2); */
+}
+
+.singContainer input:focus {
+    outline: none;
+
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.singContainer a {
+    display: inline-block;
+
+    padding: 8px 0 0 0;
+
+    width: 90%;
+    height: 27px;
+
+    border: none;
+    border-radius: 5px;
+
+    font-family: 'Open-Sans', sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+
+    text-align: center;
+
+    color: rgba(255, 255, 255, 0.7);
+    background: rgba(16, 89, 255, 0.7);
+
+    position: absolute;
+
+    bottom: 45px;
+    /* left: 15px; */
+
+    /* margin-top: -8px; */
+}
+
+.loginContainer a:hover {
+    cursor: pointer;
+}
+
+.loginContainer input {
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+.LoginAllContainer {
+    position: relative;
+}
+
+.LoginHeader {
+    margin-top: -10px;
+    padding: 10px 0;
+
+    /* background: rgb(2,0,36);
+    background: linear-gradient(228deg, rgba(2,0,36,1) 0%, rgba(26,108,227,1) 62%, rgba(0,212,255,1) 100%); */
+
+    background: url(../../Image/div.sc-ipZHIp.svg) no-repeat top center;
+    background-size: 100%;
+
+    height: 270px;
+}
+
+.LoginHeaderContainer,
+.LoginContainer {
+    width: 95%;
+    margin: auto;
+}
+
+.LoginContainer {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.LoginLoginBlock {
+    width: 30%;
+    height: 200%;
+
+    display: inline-block;
+
+    border: 1px solid darkgray;
+
+    position: absolute;
+
+    top: 170px;
+
+    background-color: white;
+}
+
+.LoginCheckbox ul {
+    display: flex;
+
+    justify-content: start;
+    align-items: center;
+
+    margin: 0 0 0 0;
+    padding: 30px 0 20px 20px;
+}
+
+.LoginCheckbox li {
+    padding-left: 10px;
+
+    /* padding-bottom: 10px; */
+
+    font-size: 18px;
+} 
+
+.LoginCheckbox li:hover {
+    cursor: pointer;
+}
+
+.LoginButtonContainer {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
