@@ -2,7 +2,8 @@ import axios from "axios";
 
 import { AuthResponce } from "../models/response/AuthResponse";
 
-export const API_URL = 'http://att24.altyntulpar.kg/api'
+
+export const API_URL = 'https://att24.altyntulpar.kg/api'
 
 export const API_TASKS = 'http://192.168.2.26:35421/itil_demo/hs/API'
 
