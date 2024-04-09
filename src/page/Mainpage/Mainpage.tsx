@@ -20,8 +20,6 @@ const Mainpage = () => {
         try {
             const responce = await UserService.getItilUser()
 
-            console.log(responce);
-
             setItilUser(responce.data)
         } catch (e) {
             console.log(e);
@@ -30,6 +28,13 @@ const Mainpage = () => {
 
     useEffect(() => {
         getItilUser()
+
+        itilUser.map((item, index) => {
+            if (item.email == localStorage.getItem('userEmail')) {
+                localStorage.setItem('UserName', item.name)
+                localStorage.setItem('UserUID', item.uid)
+            }
+        })
     }, [])
     
 
@@ -47,12 +52,7 @@ const Mainpage = () => {
     //             }
     //         })   
             
-    //         response.data.map((item, index) => {
-    //             if (item.ОсновнойEmail == localStorage.getItem('userEmail')) {
-    //                 localStorage.setItem('UserName', item.Наименование) 
-    //                 localStorage.setItem('UserUID', item.Уид)   
-    //             }
-    //         })
+    //         
 
     //     } catch(e) {
     //         console.log(e);            
