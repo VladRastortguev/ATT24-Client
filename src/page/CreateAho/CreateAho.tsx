@@ -326,7 +326,7 @@ const CreateAho = () => {
                         </div>
 
                         <div className='CreateButtonBlock'>
-                            <button className='CreateSendTaskBtn' onClick={() => setNewTask()}>Отправить</button>
+                            <button className='CreateSendTaskBtn CreateBtn' onClick={() => setNewTask()}>Отправить</button>
                         </div>                                    
                     </div>
                 </div>

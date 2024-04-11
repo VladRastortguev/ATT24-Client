@@ -205,7 +205,7 @@ const CreateTeh:FC = () => {
                                     onChange={(e) => setPodService(e.target.value)}>
                             
                                     <option value=""></option>
-                                    <option value="Проблемы с серверами">Проблемы с серверами</option>
+                                    <option value="Проблемы с серверами">Создание почты</option>
                                     <option value="Проблемы со светом">Проблемы со светом</option>
                                     <option value="Проблемы с ПО массовые">Проблемы с ПО массовые</option>
                                     <option value="Проблема с картриджами">Проблема с картриджами</option>
@@ -333,7 +333,7 @@ const CreateTeh:FC = () => {
                         </div>
 
                         <div className='CreateButtonBlock'>
-                            <button className='CreateSendTaskBtn' onClick={() => setNewTask()}>Отправить</button>
+                            <button className='CreateSendTaskBtn CreateBtn' onClick={() => setNewTask()}>Отправить</button>
                         </div>                                    
                     </div>
                 </div>

@@ -107,7 +107,7 @@ const Mainpage = () => {
                     <li className='MainpageTasks' onClick={() => navigate('/mytask')}>Мои задачи</li>
 
                     <li>
-                        <button className='logout' onClick={() => {
+                        <button className='logout CloseBtn' onClick={() => {
                             store.logout()
                             navigate("/")
                         }}>Выйти</button> 

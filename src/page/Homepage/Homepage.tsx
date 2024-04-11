@@ -42,9 +42,9 @@ const Homepage:FC = () => {
                                 <li className="loginBtn" onClick={() => {
                                     window.location.reload()
                                     store.logout()
-                                }}><a href="">Выход</a></li>
+                                }}><button className='CloseBtn'>Выход</button></li>
                             ) : (
-                                <li className="loginBtn" onClick={() => navigate(`/login`)}><a href="">Вход</a></li>
+                                <li className="loginBtn" onClick={() => navigate(`/login`)}><button className='CreateBtn'>Вход</button></li>
                             )}
                         </ul>
                     </li>

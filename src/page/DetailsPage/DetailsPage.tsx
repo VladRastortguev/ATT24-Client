@@ -168,7 +168,7 @@ const DetailsPage:FC = () => {
                     cols={170}
                     rows={6}
                     placeholder='Оставить комментарий...'></textarea>
-                <button className='pushCommentBtn' onClick={() => {
+                <button className='pushCommentBtn CreateBtn' onClick={() => {
                     pushComment()
                     setTimeout(() => {
                         window.location.reload()
@@ -240,7 +240,7 @@ const DetailsPage:FC = () => {
                 ))}
             </div>
 
-            <button onClick={() => setShowDetaisl(false)}>Закрыть</button>
+            <button className='CloseBtn' onClick={() => setShowDetaisl(false)}>Закрыть</button>
         </div>
 
     </div>

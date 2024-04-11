@@ -38,24 +38,24 @@
 }
 
 .logout {
-    padding: 7px 15px;
+    /* padding: 7px 15px; */
     margin-top: -10px;
 
-    border: 2px solid white;
+    /* border: 2px solid white; */
 
-    border-radius: 10px;
+    /* border-radius: 10px; */
 
     margin-left: 40px;
 }
 
 .logout:hover {
-    transition: 0.2s;
+    /* transition: 0.2s; */
 
-    background-color: red;
+    /* background-color: red; */
 
-    border: 2px solid red;
+    /* border: 2px solid red; */
 
-    color: black;
+    /* color: black; */
 
     cursor: pointer;
 }

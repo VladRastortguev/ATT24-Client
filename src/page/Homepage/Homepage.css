@@ -75,18 +75,22 @@ li {
     margin-bottom: 5px;
 }
 
-.loginBtn a {
+.loginBtn button {
     display: inline-block;
 
-    padding: 7.6px 17.89px;
+    /* padding: 7.6px 17.89px; */
 
-    border: 1px solid white;
-    background: white;
+    /* border: 1px solid white; */
+    /* background: white; */
 
-    font-family: "Inter", sans-serif;
-    font-weight: bold;
+    /* font-family: "Inter", sans-serif; */
+    /* font-weight: bold; */
 
-    border-radius: 16px;
+    /* border-radius: 16px; */
+}
+
+.loginBtn button:hover {
+    cursor: pointer;
 }
 
 
