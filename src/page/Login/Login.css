@@ -175,6 +175,8 @@
 
 
 
+
+
 .LoginAllContainer {
     position: relative;
 }
@@ -249,4 +251,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.regBtn {
+    width: 200px;
 }

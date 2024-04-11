@@ -5,18 +5,35 @@ body {
 }
 
 .allContainer {
-    width: 201.5vh;
-    height: 350px;
+    /* width: 201.5vh;
+    height: 350px; */
 
     /* margin-left: -10px; */
 
     /* margin-left: -7.7px; */
-    margin-top: -15.7px;
+    /* margin-top: -15.7px;
+
+    background: url(../../Image/div.sc-ipZHIp.svg) no-repeat top center;
+    background-size: 100%; */
+
+    position: relative;
+}
+
+.navbarHead {
+    margin-top: 0;
+}
+
+.homepageContainer {
+    margin-top: -10px;
+    padding: 10px 0;
+
+    /* background: rgb(2,0,36);
+    background: linear-gradient(228deg, rgba(2,0,36,1) 0%, rgba(26,108,227,1) 62%, rgba(0,212,255,1) 100%); */
 
     background: url(../../Image/div.sc-ipZHIp.svg) no-repeat top center;
     background-size: 100%;
 
-    position: relative;
+    height: 270px;
 }
 
 .logo img {
@@ -120,7 +137,7 @@ li {
     background-color: #fff;
 
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
 
     transform: translate(-50%, 0);
