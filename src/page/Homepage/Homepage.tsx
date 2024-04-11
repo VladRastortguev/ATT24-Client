@@ -32,7 +32,11 @@ const Homepage:FC = () => {
                     }><img src={logosvg} alt="Logo" /></a></li>
                     <li>
                         <ul className="findOrLogin">
-                            <li className="findBtn"><a href=""><img src={searchBtn} alt="SearchButton"/></a></li>
+                            <li className="findBtn">
+                                <a href="">
+                                    <img src={searchBtn} alt="SearchButton"/>
+                                </a>
+                            </li>
 
                             {store.isAuth ? (
                                 <li className="loginBtn" onClick={() => {
@@ -55,7 +59,7 @@ const Homepage:FC = () => {
                     <p className="sendWeMessage"><img src={flyer} alt="#" /> Свяжитесь с нами</p>
             
                     <ul className='supportList'>
-                        {store.isAuth ? (
+                        {store.isAuth && store.user.admin >= 2 ? (
                             <li className="block1C" onClick={() => navigate(`/create1c`)}>
                                 <div className="innerBlock">
                                     <div className="multiInnerblock">

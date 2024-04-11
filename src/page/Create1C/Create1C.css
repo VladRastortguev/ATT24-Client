@@ -89,7 +89,7 @@
 
     display: flex;
 
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 .CreateTitelBlockNoAuth p {
@@ -125,6 +125,10 @@
     display: inline-block;
 
     /* border: 1px solid black; */
+}
+
+.CreateInputBlocNokAuth div {
+    height: 20% !important;
 }
 
 .CreateOnlyInputBlock select {
