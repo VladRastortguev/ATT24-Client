@@ -19,6 +19,26 @@ const Login = () => {
 
   const {store} = useContext(Context)
 
+  async function chechNormalizeAuth() {
+      const res = await store.login(email, password)
+    
+      if (res == '200') {
+        navigate('/mainpage')
+      } else {
+        alert('Ошибка! Логин или пароль указаны не правильно!')
+      }
+  }
+
+  async function checkNormalizeReg() {
+      const res = store.registration(emailReg, passwordReg)
+  
+      if (res == '200') {
+        navigate('/mainpage')
+      } else {
+        alert('Ошибка!')
+      }
+  }
+
   return (
     // <div className='loginContainer'>
 
@@ -119,8 +139,7 @@ const Login = () => {
                           onChange={(e) => setPassword(e.target.value)}/>
 
                         <div className='LoginButtonContainer'>
-                            <a onClick={() => {store.login(email, password)
-                              navigate("/mainpage")}}>
+                            <a onClick={() => {chechNormalizeAuth()}}>
                               Войти</a>
                         </div>
                       </div>
@@ -143,9 +162,7 @@ const Login = () => {
                           onChange={(e) => setPasswordReg(e.target.value)}/>
 
                         <div className='LoginButtonContainer'>
-                          <a onClick={() => {
-                            store.registration(emailReg, passwordReg)
-                            navigate("/mainpage")}
+                          <a onClick={() => {checkNormalizeReg()}
                           }>Зарегестрироваться</a>
                         </div>          
                       </div>
