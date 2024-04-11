@@ -27,11 +27,32 @@
     justify-content: space-between;
 }
 
-.MainpageTasks {
-    color: white;
+.logoBack {
+    display: flex;
+    padding: 0;
 }
 
-.MainpageTasks:hover {
+.BackLink {
+    margin-top: -10px;
+    margin-left: 30px;
+}
+
+.pageNavigateList {
+    display: flex;
+    /* justify-content: space-between; */
+    padding: 0;
+    margin-left: -60px;
+    margin-top: -20px;
+}
+
+.MainpageTasks,
+.CreateTask {
+    color: white;
+    margin-left: 30px;
+}
+
+.MainpageTasks:hover,
+.CreateTask:hover {
     border-bottom: 2px solid white;
 
     cursor: pointer;

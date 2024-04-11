@@ -102,9 +102,16 @@ const Mainpage = () => {
         <div className='MainpageHeader'>
             <div className='MainpageHeaderContainer'>
                 <ul className='MainpageNavbar'>
-                    <li className='MainpageLogo'> <img src={logo}/></li>
+                    <ul className='logoBack'>
+                        <li className='MainpageLogo'> <img src={logo}/></li>
+                        <li className='BackLink'><button className='CreateBtn' onClick={() => navigate('/')}>Назад</button></li>
+                    </ul>
 
-                    <li className='MainpageTasks' onClick={() => navigate('/mytask')}>Мои задачи</li>
+                    
+                    <ul className='pageNavigateList'>
+                        <li className='MainpageTasks' onClick={() => navigate('/mytask')}>Мои задачи</li>
+                        <li className='CreateTask' onClick={() => navigate('/')}>Создать задачу</li>
+                    </ul>
 
                     <li>
                         <button className='logout CloseBtn' onClick={() => {

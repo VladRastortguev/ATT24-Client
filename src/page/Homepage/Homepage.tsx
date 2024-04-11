@@ -25,18 +25,29 @@ const Homepage:FC = () => {
 
     return (
         <div className='allContainer'>
-            <header>
+            <div>
                 <ul className="navbarHead">
-                    <li className="logo"><a onClick={
-                        store.isAuth ? () => navigate('/mainpage') : () => navigate('/')
-                    }><img src={logosvg} alt="Logo" /></a></li>
+                    <ul className='logoBack'>
+                        <li className="logo"><a onClick={
+                            store.isAuth ? () => navigate('/mainpage') : () => navigate('/')
+                        }><img src={logosvg} alt="Logo" /></a></li>
+                        {store.isAuth ? <li><button className='CreateBtn'>Назад</button></li>: null}
+                    </ul>
+                    
+                    <ul className='pageNavigateList homepageNavigation'>
+                        <li className='MainpageTasks' onClick={() => navigate('/mytask')}>Мои задачи</li>
+                        <li className='CreateTask' onClick={() => navigate('/mainpage')}>Новости</li>
+                    </ul>
+                    
                     <li>
-                        <ul className="findOrLogin">
-                            <li className="findBtn">
+                        {/* <ul className="findOrLogin"> */}
+                            {/* <li className="findBtn">
                                 <a href="">
                                     <img src={searchBtn} alt="SearchButton"/>
                                 </a>
-                            </li>
+                            </li> */}
+
+                        
 
                             {store.isAuth ? (
                                 <li className="loginBtn" onClick={() => {
@@ -46,10 +57,10 @@ const Homepage:FC = () => {
                             ) : (
                                 <li className="loginBtn" onClick={() => navigate(`/login`)}><button className='CreateBtn'>Вход</button></li>
                             )}
-                        </ul>
+                        {/* </ul> */}
                     </li>
                 </ul>
-            </header>
+            </div>
 
             <div className='containerSupportAtt'>
                 <div className='supporFooterContainer'>

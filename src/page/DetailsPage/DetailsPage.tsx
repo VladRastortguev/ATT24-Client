@@ -128,12 +128,21 @@ const DetailsPage:FC = () => {
         <div className='DetailsHeader'>
             <div className='DetailsHeaderContainer'>
                 <ul className='DetailsNavbar'>
-                    <li className='DetailsLogo'><a onClick={() => navigate('/mainpage')}> <img src={logo} /> </a></li>
+                    <ul className='logoBack'>
+                        <li className="logo"><a onClick={() => navigate('/mainpage') }><img src={logo} alt="Logo" /></a></li>
+                        <li><button className='CreateBtn' onClick={() => navigate('/mytask')}>Назад</button></li>
+                    </ul>
+
+                    <ul className='pageNavigateList DetailsNavigation'>
+                            <li className='MainpageTasks' onClick={() => navigate('/')}>Создать задачу</li>
+                            <li className='CreateTask' onClick={() => navigate('/mainpage')}>Новости</li>
+                            <li className='CreateTask' onClick={() => navigate('/mytask')}>Мои задачи</li>
+                        </ul>
                     
                     <li className='DetailsLink'>
                         <ul onClick={() => setShowDetaisl(true)}>
                             <li></li>
-                             <li></li>
+                            <li></li>
                             <li></li>
                         </ul>
                     </li>

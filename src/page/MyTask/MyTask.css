@@ -75,6 +75,11 @@
     /* border: 1px solid darkgray; */
 }
 
+.MyTaskNavigation {
+    margin: 0;
+    margin-left: -210px !important;
+}
+
 .MytaskTaskBlock {
     width: 75%;
     /* height: 100%; */
