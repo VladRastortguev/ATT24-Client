@@ -20,7 +20,12 @@ body {
 }
 
 .logo img {
-    margin-top: 5px;
+    margin-top: 10px;
+}
+
+.logoBack button {
+    margin-top: 15px;
+    margin-left: 20px;
 }
 
 li {
@@ -30,6 +35,14 @@ li {
 .navbarHead {
     display: flex;
     justify-content: space-between;
+}
+
+.pageNavigateList li {
+    padding-top: 15px;
+}
+
+.homepageNavigation {
+    margin-top: 10px !important;
 }
 
 .findOrLogin {
@@ -70,9 +83,12 @@ li {
 }
 
 .loginBtn {
-    text-align: center;
+    /* text-align: center; */
 
     margin-bottom: 5px;
+
+    margin-top: 20px;
+    margin-right: 20px;
 }
 
 .loginBtn button {

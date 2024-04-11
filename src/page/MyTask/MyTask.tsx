@@ -6,6 +6,9 @@ import { Context } from '../..'
 import axios from 'axios'
 import UserService from '../../services/UserService'
 import { OneTaskInterface } from '../DetailsPage/OneTaskInterface'
+import '../Homepage/Homepage.css'
+import '../Mainpage/Mainpage.css'
+import '../MyTask/MyTask.css'
 
 const MyTask = () => {
     const navigate = useNavigate()
@@ -52,11 +55,17 @@ const MyTask = () => {
             <div className='MytaskHeader'>
                 <div className='MytaskHeaderContainer'>
                     <ul className='MytaskNavbar'>
-                        <li><a onClick={() => navigate('/mainpage')}> <img src={logo} /> </a></li>
+                        <ul className='logoBack'>
+                            <li className="logo"><a onClick={() => navigate('/mainpage') }><img src={logo} alt="Logo" /></a></li>
+                            <li><button className='CreateBtn' onClick={() => navigate('/mainpage')}>Назад</button></li>
+                        </ul>
 
-                        <li><h3>Добро пожаловать в ваш список задач! <br /></h3></li>
+                        <ul className='pageNavigateList MyTaskNavigation'>
+                            <li className='MainpageTasks' onClick={() => navigate('/')}>Создать задачу</li>
+                            <li className='CreateTask' onClick={() => navigate('/mainpage')}>Новости</li>
+                        </ul>
 
-                        <li className='MytaskCreateTask' onClick={() => navigate('/')}>Создать задачу</li>
+                        <li></li>
                     </ul>
                 </div>
             </div>
