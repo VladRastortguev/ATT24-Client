@@ -8,6 +8,8 @@ import { Context } from '../..'
 import { observer } from 'mobx-react-lite'
 import { stderr } from 'process'
 import { useNavigate } from 'react-router-dom'
+import UserService from '../../services/UserService'
+import AuthService from '../../services/AuthService'
 
 const Create1C:FC = () => {
     const [service, setService]               = useState<string>("")
@@ -23,7 +25,7 @@ const Create1C:FC = () => {
     const [urgencyDescr, setUrgancyDescr]     = useState("")
     const [description, setDescription]       = useState("")
 
-    const API_TASKS = 'http://192.168.2.26:35421/itil_att/hs/taskapi/settask'
+    // const API_TASKS = 'http://192.168.2.26:35421/itil_att/hs/taskapi/settask'
 
     const { store } = useContext(Context)
 
@@ -103,12 +105,7 @@ const Create1C:FC = () => {
         store.setLoading(true)
 
         try {
-            const res = await axios.post(API_TASKS, taskObj, {
-                auth: {
-                    username: "WebInterface",
-                    password: "90nexuB"
-                }
-            })
+            const res = AuthService.setNewTask(taskObj)
 
             console.log(res);
         } catch (e) {

@@ -11,5 +11,6 @@ export interface OneTaskInterface {
     Service: string,
     TaskName: string,
     TaskType: string,
-    UID: string      
+    UID: string,
+    onetask: object      
 }

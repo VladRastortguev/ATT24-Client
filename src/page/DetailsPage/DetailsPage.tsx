@@ -10,12 +10,15 @@ import '../DetailsPage/DetailsPage.css'
 import logo from '../../Image/logo.svg'
 import { observer } from 'mobx-react-lite'
 import { OneTaskInterface } from './OneTaskInterface'
+import UserService from '../../services/UserService'
+import { commentModel } from '../../models/itil/comment-model'
+import AuthService from '../../services/AuthService'
 
 const DetailsPage:FC = () => {
     const {uid, tasktype} = useParams()
     const { store } = useContext(Context)
 
-    const [commentArr, setCommentArr] = useState<CommentInterface[]>([])
+    const [commentArr, setCommentArr] = useState<commentModel[]>([])
     const [oneTask, setOneTask] = useState<OneTaskInterface[]>([])
 
     const [showDetails, setShowDetaisl] = useState(false)
@@ -29,12 +32,14 @@ const DetailsPage:FC = () => {
 
         try {
 
-            const responce = await axios.get(`http://192.168.2.26:35421/itil_att/hs/taskapi/comment/${uid}/${tasktype}`, {
-                auth: {
-                    username: 'WebInterface',
-                    password: '90nexuB'
-                }
-            })
+            // const responce = await axios.get(`http://192.168.2.26:35421/itil_att/hs/taskapi/comment/${uid}/${tasktype}`, {
+            //     auth: {
+            //         username: 'WebInterface',
+            //         password: '90nexuB'
+            //     }
+            // })
+
+            const responce = await UserService.getComment(String(uid), String(tasktype))
 
             setCommentArr(responce.data)
 
@@ -50,14 +55,27 @@ const DetailsPage:FC = () => {
 
         try {
             
-            const responce = await axios.get(`http://192.168.2.26:35421/itil_att/hs/taskapi/getonetask/${uid}/${tasktype}`, {
-                auth: {
-                    username: 'WebInterface',
-                    password: '90nexuB'
-                }
-            })
+            // const responce = await axios.get(`http://192.168.2.26:35421/itil_att/hs/taskapi/getonetask/${uid}/${tasktype}`, {
+            //     auth: {
+            //         username: 'WebInterface',
+            //         password: '90nexuB'
+            //     }
+            // })
 
-            setOneTask(responce.data)
+            const responce = await UserService.getOneTask(String(uid), String(tasktype))
+
+            // responce.data.map((item) => {
+            //     // setOneTask([item])   
+            //     console.log([item[0]]);
+                
+            // })
+            
+            // console.log([responce.data[0]]);
+
+            // console.log([responce.data[0]]);
+            
+
+            setOneTask([responce.data[0]])
 
         } catch (e) {
             console.log(e);
@@ -76,12 +94,14 @@ const DetailsPage:FC = () => {
 
         try {
 
-            const responce = await axios.post(`http://192.168.2.26:35421/itil_att/hs/taskapi/comment/${uid}/${tasktype}`, obj, {
-                auth: {
-                    username: 'WebInterface',
-                    password: '90nexuB'
-                }
-            })
+            // const responce = await axios.post(`http://192.168.2.26:35421/itil_att/hs/taskapi/comment/${uid}/${tasktype}`, obj, {
+            //     auth: {
+            //         username: 'WebInterface',
+            //         password: '90nexuB'
+            //     }
+            // })
+
+            const responce = AuthService.setNewComment(obj, String(uid), String(tasktype))
 
             console.log(responce);
 
@@ -125,16 +145,16 @@ const DetailsPage:FC = () => {
             <div className='DetailsCommentBlock'>
                 {commentArr.map((item, index) => (
                     <ul key={`CommentList${index}`} className={`CommentList ${
-                        String(item.UserName) == String(localStorage.getItem('UserName')) ? 'CommentMyList' : 'CommentNotMyList'
+                        String(item.username) == String(localStorage.getItem('UserName')) ? 'CommentMyList' : 'CommentNotMyList'
                     }`} >
                         <li key={`CommentItemUsername${index}`} className='CommentItemUsername'>{
-                            `${String(item.UserName).split(' ')[0]}. 
-                             ${String(String(item.UserName).split(' ')[1]).substring(0, 1)}.
-                             ${String(String(item.UserName).split(' ')[2]).substring(0, 1)}.`
+                            `${String(item.username).split(' ')[0]}. 
+                             ${String(String(item.username).split(' ')[1]).substring(0, 1)}.
+                             ${String(String(item.username).split(' ')[2]).substring(0, 1)}.`
                         }</li>
-                        <li key={`CommentItemText${index}`} className='CommnetItemText'>{item.Текст}</li>
+                        <li key={`CommentItemText${index}`} className='CommnetItemText'>{item.text}</li>
                         <li key={`CommentItemDate${index}`} className='CommentItemDate'>{
-                            String(item.Дата).split(' ')[0]
+                            String(item.date).split(' ')[0]
                         }</li>
                     </ul>   
                 ))}
@@ -150,7 +170,9 @@ const DetailsPage:FC = () => {
                     placeholder='Оставить комментарий...'></textarea>
                 <button className='pushCommentBtn' onClick={() => {
                     pushComment()
-                    window.location.reload()
+                    setTimeout(() => {
+                        window.location.reload()
+                    }, 100)
                 }}>Отправить</button>
             </div> 
         </div> 

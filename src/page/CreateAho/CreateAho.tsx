@@ -4,6 +4,7 @@ import { Context } from '../..'
 import { useNavigate } from 'react-router-dom'
 import logo from '../../Image/logo.svg'
 import { observer } from 'mobx-react-lite'
+import AuthService from '../../services/AuthService'
 
 const CreateAho = () => {
     const [service, setService]               = useState("")
@@ -99,12 +100,7 @@ const CreateAho = () => {
         store.setLoading(true)
 
         try {
-            const res = await axios.post(API_TASKS, taskObj, {
-                auth: {
-                    username: "WebInterface",
-                    password: "90nexuB"
-                }
-            })
+            const res = AuthService.setNewTask(taskObj)
 
             console.log(res);
         } catch (e) {

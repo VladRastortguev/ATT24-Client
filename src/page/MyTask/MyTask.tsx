@@ -4,6 +4,8 @@ import '../MyTask/MyTask.css'
 import { useNavigate } from 'react-router-dom'
 import { Context } from '../..'
 import axios from 'axios'
+import UserService from '../../services/UserService'
+import { OneTaskInterface } from '../DetailsPage/OneTaskInterface'
 
 const MyTask = () => {
     const navigate = useNavigate()
@@ -11,7 +13,7 @@ const MyTask = () => {
 
     const [taskFilter, setTaskFilter] = useState("Я постановщик")
     const [showFilter, setShowFilter] = useState(false)
-    const [taskArr, setTaskArr] = useState([])
+    const [taskArr, setTaskArr] = useState<OneTaskInterface[]>([])
 
     async function MytaskGetTask() {
         store.setLoading(true)
@@ -19,17 +21,21 @@ const MyTask = () => {
         const userEmail = localStorage.getItem('userEmail')
 
         try {
-            const response = await axios.get(`http://192.168.2.26:35421/itil_att/hs/taskapi/tasksget/${userEmail}`, {
-                auth: {
-                    username: 'WebInterface',
-                    password: '90nexuB'
-                }
+            // const response = await axios.get(`http://192.168.2.26:35421/itil_att/hs/taskapi/tasksget/${userEmail}`, {
+            //     auth: {
+            //         username: 'WebInterface',
+            //         password: '90nexuB'
+            //     }
 
-            })
+            // })
 
-            console.log(response);
+            const responce = await UserService.getAllTask(String(userEmail))
 
-            setTaskArr(response.data)
+            // console.log(responce);
+
+            console.log(responce);
+
+            setTaskArr(responce.data)
         } catch (e) {
             console.log(e);
         } finally {

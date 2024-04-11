@@ -6,6 +6,7 @@ import '../CreateTeh/CreateTeh.css'
 import { Context } from '../..'
 import { useNavigate } from 'react-router-dom'
 import { observer } from 'mobx-react-lite'
+import AuthService from '../../services/AuthService'
 
 const CreateTeh:FC = () => {
     const [service, setService]               = useState("")
@@ -101,12 +102,7 @@ const CreateTeh:FC = () => {
         store.setLoading(true)
 
         try {
-            const res = await axios.post(API_TASKS, taskObj, {
-                auth: {
-                    username: "WebInterface",
-                    password: "90nexuB"
-                }
-            })
+            const res = AuthService.setNewTask(taskObj)
 
             console.log(res);
         } catch (e) {
