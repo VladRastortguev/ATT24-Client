@@ -30,7 +30,7 @@ const Login = () => {
   }
 
   async function checkNormalizeReg() {
-      const res = store.registration(emailReg, passwordReg)
+      const res = await store.registration(emailReg, passwordReg)
   
       if (res == '200') {
         navigate('/mainpage')
