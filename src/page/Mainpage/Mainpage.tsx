@@ -20,7 +20,34 @@ const Mainpage = () => {
         try {
             const responce = await UserService.getItilUser()
 
-            setItilUser(responce.data)
+            console.log(responce);
+            
+            responce.data.map((item) => {
+                if (item.email == localStorage.getItem('userEmail')) {
+                    localStorage.setItem('UserName', item.name)
+                    localStorage.setItem('UserUID', item.uid)
+
+                    console.log(item);
+                    
+
+                }
+                
+                // if (localStorage.getItem('UserName') == "" || localStorage.getItem('UserName') == undefined) {
+                //     window.location.reload()
+                // }
+            })
+
+            // setItilUser(responce.data)
+        } catch (e) {
+            console.log(e);
+        }
+    }
+
+    async function getOneCompany() {
+        try {
+            const responce = await UserService.getCompanyItil()
+
+            console.log(responce);
         } catch (e) {
             console.log(e);
         }
@@ -28,38 +55,14 @@ const Mainpage = () => {
 
     useEffect(() => {
         getItilUser()
-
-        itilUser.map((item, index) => {
-            if (item.email == localStorage.getItem('userEmail')) {
-                localStorage.setItem('UserName', item.name)
-                localStorage.setItem('UserUID', item.uid)
-            }
-        })
     }, [])
-    
+           
+    useEffect(() => {
+        // setTimeout(() => {
+            getOneCompany()
+        // }, 10000)
+    }, [])
 
-    // login: string
-
-
-    // async function getItilUser() {
-    //     store.setLoading(true)
-
-    //     try {
-    //         const response = await axios.get(`http://192.168.2.26:35421/itil_att/hs/taskapi/users`, {
-    //             auth: {
-    //                 username: 'WebInterface',
-    //                 password: '90nexuB'
-    //             }
-    //         })   
-            
-    //         
-
-    //     } catch(e) {
-    //         console.log(e);            
-    //     } finally {
-    //         store.setLoading(false)
-    //     }
-    // }
 
     // async function getCompany() {
     //     store.setLoading(true)

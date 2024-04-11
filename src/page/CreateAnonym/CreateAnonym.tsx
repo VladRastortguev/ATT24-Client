@@ -1,7 +1,9 @@
 import axios from 'axios'
-import React, { useState } from 'react'
+import React, { FC, useState } from 'react'
+import AuthService from '../../services/AuthService'
+import { observer } from 'mobx-react-lite'
 
-const CreateAnonym = () => {
+const CreateAnonym:FC = () => {
     const [service, setService]               = useState("")
     const [taskName, setTaskName]             = useState("")
     const [description, setDescription]       = useState("")
@@ -28,12 +30,7 @@ const CreateAnonym = () => {
         ]
 
         try {
-            const res = await axios.post(API_TASKS, taskObj, {
-                auth: {
-                    username: "WebInterface",
-                    password: "90nexuB"
-                }
-            })
+            const res = AuthService.setNewTask(taskObj)
 
             console.log(res);
         } catch (e) {
@@ -69,8 +66,6 @@ const CreateAnonym = () => {
                     <textarea
                         name="description" 
                         id="" 
-                        cols="60" 
-                        rows="5"
                         className='description'
                         value={description}
                         onChange={(e) => setDescription(e.target.value)}
@@ -86,4 +81,4 @@ const CreateAnonym = () => {
     )
 }
 
-export default CreateAnonym
+export default observer(CreateAnonym)
