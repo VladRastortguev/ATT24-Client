@@ -25,7 +25,7 @@ const Homepage:FC = () => {
 
     return (
         <div className='allContainer'>
-            <div>
+            <div className='homepageContainer'>
                 <ul className="navbarHead">
                     <ul className='logoBack'>
                         <li className="logo"><a onClick={
