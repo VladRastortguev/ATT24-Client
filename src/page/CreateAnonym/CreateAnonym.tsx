@@ -10,6 +10,8 @@ import '../CreateTeh/CreateTeh.css'
 import '../CreateAho/CreateAho.css'
 import '../CreateAnonym/CreateAnonym.css'
 
+import '../../style.css'
+
 const CreateAnonym:FC = () => {
     const [service, setService]               = useState("")
     const [podService, setPodService]         = useState("")
@@ -144,7 +146,7 @@ const CreateAnonym:FC = () => {
                         </div>
 
                         <div className='CreateButtonBlock'>
-                            <button className='CreateSendTaskBtn' onClick={() => setNewTask()}>Отправить</button>
+                            <button className='CreateSendTaskBtn CreateBtn' onClick={() => setNewTask()}>Отправить</button>
                         </div>                                    
                     </div>
                 </div>

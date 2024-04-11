@@ -11,6 +11,8 @@ import { useNavigate } from 'react-router-dom'
 import UserService from '../../services/UserService'
 import AuthService from '../../services/AuthService'
 
+import '../../style.css'
+
 const Create1C:FC = () => {
     const [service, setService]               = useState<string>("")
     const [podService, setPodService]         = useState("")
@@ -331,7 +333,7 @@ const Create1C:FC = () => {
                         </div>
 
                         <div className='CreateButtonBlock'>
-                            <button className='CreateSendTaskBtn' onClick={() => setNewTask()}>Отправить</button>
+                            <button className='CreateSendTaskBtn CreateBtn' onClick={() => setNewTask()}>Отправить</button>
                         </div>                                    
                     </div>
                 </div>

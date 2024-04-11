@@ -138,9 +138,9 @@ const Login = () => {
                           value={password}
                           onChange={(e) => setPassword(e.target.value)}/>
 
-                        <div className='LoginButtonContainer'>
-                            <a onClick={() => {chechNormalizeAuth()}}>
-                              Войти</a>
+                        <div className='LoginButtonContainer '>
+                            <button className='CreateBtn' onClick={() => {chechNormalizeAuth()}}>
+                              Войти</button>
                         </div>
                       </div>
                     </div> 
@@ -162,8 +162,8 @@ const Login = () => {
                           onChange={(e) => setPasswordReg(e.target.value)}/>
 
                         <div className='LoginButtonContainer'>
-                          <a onClick={() => {checkNormalizeReg()}
-                          }>Зарегестрироваться</a>
+                          <button className='CreateBtn' onClick={() => {checkNormalizeReg()}
+                          }>Зарегистрироваться</button>
                         </div>          
                       </div>
                     </div>}
