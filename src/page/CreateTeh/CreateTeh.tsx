@@ -3,6 +3,7 @@ import React, { FC, useContext, useEffect, useState } from 'react'
 import logo from '../../Image/logo.svg'
 
 import '../CreateTeh/CreateTeh.css'
+import '../Create1C/Create1C.css'
 import { Context } from '../..'
 import { useNavigate } from 'react-router-dom'
 import { observer } from 'mobx-react-lite'

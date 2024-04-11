@@ -3,3 +3,37 @@
     letter-spacing: -0.2px;
     padding-bottom: 10px;
 }
+
+.CreateInputBlockNoAuth div {
+    height: 10% !important;
+
+    margin-left: 10px;
+}
+
+.CreateInputBlockNoAuth div input {
+    height: 70%;
+
+    margin-top: 1px;
+}
+
+.CreateInputBlockNoAuth div select {
+    height: 80%;
+
+    margin-top: 1px;
+}
+
+.CreateInputBlockNoAuth div textarea {
+    margin-top: 1px;
+}
+
+.CreateTitel p {
+    margin-top: 20px;
+}
+
+.CreateTitelBlockNoAuth p {
+    margin-top: 15px;
+}
+
+.CreaeteInputs {
+    margin-top: 20px;
+}
