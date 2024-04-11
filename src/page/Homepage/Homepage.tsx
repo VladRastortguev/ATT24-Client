@@ -27,7 +27,9 @@ const Homepage:FC = () => {
         <div className='allContainer'>
             <header>
                 <ul className="navbarHead">
-                    <li className="logo"><a onClick={() => navigate('/mainpage')}><img src={logosvg} alt="Logo" /></a></li>
+                    <li className="logo"><a onClick={
+                        store.isAuth ? () => navigate('/mainpage') : () => navigate('/')
+                    }><img src={logosvg} alt="Logo" /></a></li>
                     <li>
                         <ul className="findOrLogin">
                             <li className="findBtn"><a href=""><img src={searchBtn} alt="SearchButton"/></a></li>

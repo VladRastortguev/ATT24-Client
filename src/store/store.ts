@@ -44,8 +44,10 @@ export default class Store {
 
             this.setAuth(true);
             this.setUser(response.data.user);
+
+            return '200'
         } catch (e) {
-            console.log(e);
+            return '400'
         }   
     }
 
@@ -57,8 +59,12 @@ export default class Store {
             console.log(response);
             this.setAuth(true);
             this.setUser(response.data.user);
+
+            return '200'
         } catch (e) {
             console.log(e);
+
+            return '400'
         }   
     }
 
