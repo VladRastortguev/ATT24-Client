@@ -11,6 +11,7 @@ import '../Homepage/HomepageMedia.css'
 import { useNavigate } from 'react-router-dom'
 import { Context } from '../..'
 import { observer } from 'mobx-react-lite'
+import Header from '../../Component/Header/Header'
 
 const Homepage:FC = () => {
     const navigate = useNavigate();
@@ -21,46 +22,26 @@ const Homepage:FC = () => {
     }, [])
 
     console.log(store.isAuth);
+
+    const navbarObj = {
+        firstUl: true,
+        secondUl: true,
+        manyLink: 2,
+        thirdUl: false,
+        thirdUlAsBurger: false,
+        getOut: true,
+        getWelcom: true,
+        pageName: 'Homepage',
+        lastLiEmpty: false,
+        lastLiIsLogOut: true, 
+        linkList: ['Мои задачи /mytask', 'Новости /mainpage'],
+        changeBurger: null 
+    } 
     
 
     return (
         <div className='allContainer'>
-            <div className='homepageContainer'>
-                <ul className="navbarHead">
-                    <ul className='logoBack'>
-                        <li className="logo"><a onClick={
-                            store.isAuth ? () => navigate('/mainpage') : () => navigate('/')
-                        }><img src={logosvg} alt="Logo" /></a></li>
-                        {store.isAuth ? <li><button className='CreateBtn'>Назад</button></li>: null}
-                    </ul>
-                    
-                    <ul className='pageNavigateList homepageNavigation'>
-                        <li className='MainpageTasks' onClick={() => navigate('/mytask')}>Мои задачи</li>
-                        <li className='CreateTask' onClick={() => navigate('/mainpage')}>Новости</li>
-                    </ul>
-                    
-                    <li>
-                        {/* <ul className="findOrLogin"> */}
-                            {/* <li className="findBtn">
-                                <a href="">
-                                    <img src={searchBtn} alt="SearchButton"/>
-                                </a>
-                            </li> */}
-
-                        
-
-                            {store.isAuth ? (
-                                <li className="loginBtn" onClick={() => {
-                                    window.location.reload()
-                                    store.logout()
-                                }}><button className='CloseBtn'>Выход</button></li>
-                            ) : (
-                                <li className="loginBtn" onClick={() => navigate(`/login`)}><button className='CreateBtn'>Вход</button></li>
-                            )}
-                        {/* </ul> */}
-                    </li>
-                </ul>
-            </div>
+            <Header navbarObj={navbarObj} />
 
             <div className='containerSupportAtt'>
                 <div className='supporFooterContainer'>

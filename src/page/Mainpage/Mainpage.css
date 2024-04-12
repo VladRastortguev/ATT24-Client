@@ -2,39 +2,10 @@
     position: relative;
 }
 
-.MainpageHeader {
-    margin-top: -10px;
-    padding: 10px 0;
 
-    /* background: rgb(2,0,36);
-    background: linear-gradient(228deg, rgba(2,0,36,1) 0%, rgba(26,108,227,1) 62%, rgba(0,212,255,1) 100%); */
-
-    background: url(../../Image/div.sc-ipZHIp.svg) no-repeat top center;
-    background-size: 100%;
-
-    height: 270px;
-}
-
-.MainpageContainer,
-.MainpageHeaderContainer {
+.MainpageContainer {
     width: 95%;
     margin: auto;
-}
-
-.MainpageNavbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.logoBack {
-    display: flex;
-    padding: 0;
-}
-
-.BackLink {
-    margin-top: -10px;
-    margin-left: 30px;
 }
 
 .pageNavigateList {

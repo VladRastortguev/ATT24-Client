@@ -143,9 +143,11 @@
 
 .CreateOnlyInputBlock textarea {
     width: 88%;
-    height: 30px;
+    height: 40px;
 
     resize: none;
+
+    overflow-y: hidden;
 }
 
 .CreateInputBlocNokAuth div {

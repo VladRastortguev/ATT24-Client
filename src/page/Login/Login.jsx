@@ -162,7 +162,7 @@ const Login = () => {
                           onChange={(e) => setPasswordReg(e.target.value)}/>
 
                         <div className='LoginButtonContainer'>
-                          <button className='CreateBtn' onClick={() => {checkNormalizeReg()}
+                          <button className='CreateBtn regBtn' onClick={() => {checkNormalizeReg()}
                           }>Зарегистрироваться</button>
                         </div>          
                       </div>

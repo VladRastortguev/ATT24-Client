@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import logo from '../../Image/logo.svg'
 import { observer } from 'mobx-react-lite'
 import AuthService from '../../services/AuthService'
+import Header from '../../Component/Header/Header'
 
 const CreateAho = () => {
     const [service, setService]               = useState("")
@@ -127,23 +128,40 @@ const CreateAho = () => {
     console.log(store.isAuth);
     
 
-    if (store.isLoading) {
-        return (
-            <div>
-                Загрузка...
-            </div>
-        )
+    // if (store.isLoading) {
+    //     return (
+    //         <div>
+    //             Загрузка...
+    //         </div>
+    //     )
+    // }
+
+    const navbarObj = {
+        firstUl: true,
+        secondUl: false,
+        manyLink: 3,
+        thirdUl: false,
+        thirdUlAsBurger: false,
+        getOut: false,
+        getWelcom: false,
+        pageName: 'Create',
+        lastLiEmpty: false,
+        lastLiIsLogOut: false, 
+        linkList: ['Мои задачи /mytask', 'Создать задачу /', 'Новости /mainpage'],
+        changeBurger: null
     }
 
     return (
         <div className='CreateAllContainer'>
-            <div className='CreateHeader'>
+            {/* <div className='CreateHeader'>
                 <div className='CreateHeaderContainer'>
                     <ul className='CreateNavbar'>
                         <li className='CreateLogo' onClick={() => navigate('/')}><a><img src={logo} /></a></li>
                     </ul>
                 </div>
-            </div>
+            </div> */}
+
+            <Header navbarObj={navbarObj} />
 
             <div className='CreateContainer'>
                 <div className='CreateBlock'>

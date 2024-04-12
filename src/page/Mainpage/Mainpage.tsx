@@ -9,6 +9,7 @@ import logo from '../../Image/logo.svg'
 
 import '../Mainpage/Mainpage.css'
 import UserService from '../../services/UserService';
+import Header from '../../Component/Header/Header';
 
 const Mainpage = () => {
     const { store } = useContext(Context) 
@@ -47,7 +48,7 @@ const Mainpage = () => {
         try {
             const responce = await UserService.getCompanyItil()
 
-            console.log(responce);
+            // console.log(responce);
         } catch (e) {
             console.log(e);
         }
@@ -63,65 +64,24 @@ const Mainpage = () => {
         // }, 10000)
     }, [])
 
-
-    // async function getCompany() {
-    //     store.setLoading(true)
-        
-    //     try {
-
-    //         const response = await axios.get(`http://192.168.2.26:35421/itil_att/hs/taskapi/company/${String(localStorage.getItem('UserUID'))}`, {
-    //             auth: {
-    //                 username: 'WebInterface',
-    //                 password: '90nexuB' 
-    //             }
-    //         })
-
-    //         response.data.map((item, index) => {
-    //             localStorage.setItem('company', item.Организация)
-    //         })
-
-    //         console.log(response);
-
-    //     } catch(e) {
-
-    //     } finally {
-    //         store.setLoading(false)
-    //     }
-    // }
-
-    // useEffect(() => {
-    //     getItilUser()
-    //     getCompany()
-    //     // window.location.reload
-    // }, [])
-
-    // console.log(localStorage.getItem('UserName'));
+    const navbarObj = {
+        firstUl: true,
+        secondUl: true,
+        manyLink: 2,
+        thirdUl: false,
+        thirdUlAsBurger: false,
+        getOut: true,
+        getWelcom: false,
+        pageName: 'Mainpage',
+        lastLiEmpty: false,
+        lastLiIsLogOut: true, 
+        linkList: ['Мои задачи /mytask', 'Создать задачу /'],
+        changeBurger: null 
+    }
 
   return (
     <div className='MainpageAllContainer'>
-        <div className='MainpageHeader'>
-            <div className='MainpageHeaderContainer'>
-                <ul className='MainpageNavbar'>
-                    <ul className='logoBack'>
-                        <li className='MainpageLogo'> <img src={logo}/></li>
-                        <li className='BackLink'><button className='CreateBtn' onClick={() => navigate('/')}>Назад</button></li>
-                    </ul>
-
-                    
-                    <ul className='pageNavigateList'>
-                        <li className='MainpageTasks' onClick={() => navigate('/mytask')}>Мои задачи</li>
-                        <li className='CreateTask' onClick={() => navigate('/')}>Создать задачу</li>
-                    </ul>
-
-                    <li>
-                        <button className='logout CloseBtn' onClick={() => {
-                            store.logout()
-                            navigate("/")
-                        }}>Выйти</button> 
-                    </li>
-                </ul>
-            </div>
-        </div>
+        <Header navbarObj={navbarObj} />
 
         <div className='MainpageContainer'>
             <div className='MainpageNewsBlock'>
