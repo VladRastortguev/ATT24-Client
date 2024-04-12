@@ -12,6 +12,7 @@ import UserService from '../../services/UserService'
 import AuthService from '../../services/AuthService'
 
 import '../../style.css'
+import Header from '../../Component/Header/Header'
 
 const Create1C:FC = () => {
     const [service, setService]               = useState<string>("")
@@ -131,26 +132,43 @@ const Create1C:FC = () => {
         setDescription    ("")
     }
 
-    console.log(store.isAuth);
+    // console.log(store.isAuth);
+
+    const navbarObj = {
+        firstUl: true,
+        secondUl: false,
+        manyLink: 3,
+        thirdUl: false,
+        thirdUlAsBurger: false,
+        getOut: false,
+        getWelcom: false,
+        pageName: 'Create',
+        lastLiEmpty: false,
+        lastLiIsLogOut: false, 
+        linkList: ['Мои задачи /mytask', 'Создать задачу /', 'Новости /mainpage'],
+        changeBurger: null
+    }
     
 
-    if (store.isLoading) {
-        return (
-            <div>
-                Загрузка...
-            </div>
-        )
-    }
+    // if (store.isLoading) {
+    //     return (
+    //         <div>
+    //             Загрузка...
+    //         </div>
+    //     )
+    // }
 
     return (
         <div className='CreateAllContainer'>
-            <div className='CreateHeader'>
+            {/* <div className='CreateHeader'>
                 <div className='CreateHeaderContainer'>
                     <ul className='CreateNavbar'>
                         <li className='CreateLogo' onClick={() => navigate('/')}><a><img src={logo} /></a></li>
                     </ul>
                 </div>
-            </div>
+            </div> */}
+
+            <Header navbarObj={navbarObj} />
 
             <div className='CreateContainer'>
                 <div className='CreateBlock'>

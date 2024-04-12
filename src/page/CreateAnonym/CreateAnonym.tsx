@@ -11,6 +11,7 @@ import '../CreateAho/CreateAho.css'
 import '../CreateAnonym/CreateAnonym.css'
 
 import '../../style.css'
+import Header from '../../Component/Header/Header'
 
 const CreateAnonym:FC = () => {
     const [service, setService]               = useState("")
@@ -90,23 +91,40 @@ const CreateAnonym:FC = () => {
     console.log(store.isAuth);
     
 
-    if (store.isLoading) {
-        return (
-            <div>
-                Загрузка...
-            </div>
-        )
+    // if (store.isLoading) {
+    //     return (
+    //         <div>
+    //             Загрузка...
+    //         </div>
+    //     )
+    // }
+
+    const navbarObj = {
+        firstUl: true,
+        secondUl: false,
+        manyLink: 3,
+        thirdUl: false,
+        thirdUlAsBurger: false,
+        getOut: false,
+        getWelcom: false,
+        pageName: 'Create',
+        lastLiEmpty: false,
+        lastLiIsLogOut: false, 
+        linkList: ['Мои задачи /mytask', 'Создать задачу /', 'Новости /mainpage'],
+        changeBurger: null 
     }
 
     return (
         <div className='CreateAllContainer'>
-            <div className='CreateHeader'>
+            {/* <div className='CreateHeader'>
                 <div className='CreateHeaderContainer'>
                     <ul className='CreateNavbar'>
                         <li className='CreateLogo' onClick={() => navigate('/')}><a><img src={logo} /></a></li>
                     </ul>
                 </div>
-            </div>
+            </div> */}
+
+            <Header navbarObj={navbarObj} />
 
             <div className='CreateContainer'>
                 <div className='CreateBlock'>

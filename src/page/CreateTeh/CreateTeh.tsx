@@ -8,6 +8,7 @@ import { Context } from '../..'
 import { useNavigate } from 'react-router-dom'
 import { observer } from 'mobx-react-lite'
 import AuthService from '../../services/AuthService'
+import Header from '../../Component/Header/Header'
 
 const CreateTeh:FC = () => {
     const [service, setService]               = useState("")
@@ -130,23 +131,40 @@ const CreateTeh:FC = () => {
     console.log(store.isAuth);
     
 
-    if (store.isLoading) {
-        return (
-            <div>
-                Загрузка...
-            </div>
-        )
+    // if (store.isLoading) {
+    //     return (
+    //         <div>
+    //             Загрузка...
+    //         </div>
+    //     )
+    // }
+
+    const navbarObj = {
+        firstUl: true,
+        secondUl: false,
+        manyLink: 3,
+        thirdUl: false,
+        thirdUlAsBurger: false,
+        getOut: false,
+        getWelcom: false,
+        pageName: 'Create',
+        lastLiEmpty: false,
+        lastLiIsLogOut: false, 
+        linkList: ['Мои задачи /mytask', 'Создать задачу /', 'Новости /mainpage'],
+        changeBurger: null 
     }
 
     return (
         <div className='CreateAllContainer'>
-            <div className='CreateHeader'>
+            {/* <div className='CreateHeader'>
                 <div className='CreateHeaderContainer'>
                     <ul className='CreateNavbar'>
                         <li className='CreateLogo' onClick={() => navigate('/')}><a><img src={logo} /></a></li>
                     </ul>
                 </div>
-            </div>
+            </div> */}
+
+            <Header navbarObj={navbarObj} />
 
             <div className='CreateContainer'>
                 <div className='CreateBlock'>
@@ -204,13 +222,53 @@ const CreateTeh:FC = () => {
                                     value={podService}
                                     onChange={(e) => setPodService(e.target.value)}>
                             
-                                    <option value=""></option>
-                                    <option value="Проблемы с серверами">Создание почты</option>
-                                    <option value="Проблемы со светом">Проблемы со светом</option>
-                                    <option value="Проблемы с ПО массовые">Проблемы с ПО массовые</option>
-                                    <option value="Проблема с картриджами">Проблема с картриджами</option>
-                                    <option value="Проблемы с оборудованием">Проблемы с оборудованием</option>
-                                    <option value="Проблемы с ПО одиночные">Проблемы с ПО одиночные</option>
+                                    <ul>
+                                        <li><a>Подготовка</a>
+                                            <ul>
+                                                <option value="Подготовка электронных карт доступа">Подготовка электронных карт доступа</option>
+                                                <option value="Подготовка нового копьютера">Подготовка нового копьютера</option>
+                                            </ul>
+                                        </li>
+
+                                        <li><a>Создание</a>
+                                            <ul>
+                                                <option value="Создание кода отпечатков пальцев">Создание кода отпечатков пальцев</option>
+                                                <option value="Создание почты">Создание почты</option>
+                                            </ul>
+                                        </li>
+
+                                        <li><a>Настройка</a>
+                                            <ul>
+                                                <option value="Настройки прав доступа в общие папки">Настройки прав доступа в общие папки</option>
+                                                <option value="Настройка принтера">Настройка принтера</option>
+                                                <option value="Настройка удаленного доступа">Настройка удаленного доступа</option>
+                                                <option value="Настройка сканера">Настройка сканера</option>
+                                                <option value="Настройка почты на телефон">Настройка почты на телефон</option>
+                                                <option value="Настройка почты на рабочий компьютер">Настройка почты на рабочий компьютер</option>
+                                                <option value="Настройка доступа в 1С">Настройка доступа в 1С</option>
+                                                <option value="Настройка камер на рабочий компьютер">Настройка камер на рабочий компьютер</option>
+                                                <option value="Настройка камер на личный телефон">Настройка камер на личный телефон</option>
+                                            </ul>
+                                        </li>
+
+                                        <li><a>Установка</a>
+                                            <ul>
+                                                <option value="Установка операционной системы">Установка операционной системы</option>
+                                                <option value="Установка программного обеспечения">Установка программного обеспечения</option>
+                                            </ul>
+                                        </li>
+
+                                        <li><a>Блокировка</a>
+                                            <ul>
+                                                <option value="Блокировка почты уволенного сотрудника">Блокировка почты уволенного сотрудника</option>
+                                                <option value="Блокировка карты доступа уволенного сотрудника">Блокировка почты уволенного сотрудника</option>
+                                            </ul>
+                                        </li>
+
+                                        <li><a>Обслуживание</a>
+
+                                        </li>
+                                    </ul>
                                 </select>
                             </div>
 

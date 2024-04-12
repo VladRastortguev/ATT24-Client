@@ -9,6 +9,7 @@ import { OneTaskInterface } from '../DetailsPage/OneTaskInterface'
 import '../Homepage/Homepage.css'
 import '../Mainpage/Mainpage.css'
 import '../MyTask/MyTask.css'
+import Header from '../../Component/Header/Header'
 
 const MyTask = () => {
     const navigate = useNavigate()
@@ -50,9 +51,24 @@ const MyTask = () => {
         MytaskGetTask()
     }, [])
 
+    const navbarObj = {
+        firstUl: true,
+        secondUl: true,
+        manyLink: 3,
+        thirdUl: false,
+        thirdUlAsBurger: true,
+        getOut: false,
+        getWelcom: false,
+        pageName: 'Mytask',
+        lastLiEmpty: false,
+        lastLiIsLogOut: true, 
+        linkList: ['Создать задачу /', 'Новости /mainpage'],
+        changeBurger: null 
+    }
+
     return (
         <div className='MytaskAllContainer'>
-            <div className='MytaskHeader'>
+            {/* <div className='MytaskHeader'>
                 <div className='MytaskHeaderContainer'>
                     <ul className='MytaskNavbar'>
                         <ul className='logoBack'>
@@ -68,7 +84,9 @@ const MyTask = () => {
                         <li></li>
                     </ul>
                 </div>
-            </div>
+            </div> */}
+
+            <Header navbarObj={navbarObj} />
 
             <div className='MytaskContainer'>
                 <div className='MytaskTaskBlock'>

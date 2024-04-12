@@ -22,6 +22,30 @@
     color: white;
 }
 
+#CreateBtn {
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+
+    font-size: 15px;
+
+    color: blue;
+
+    border-radius: 5px;
+    background: white;
+
+    width: 90px;
+    height: 30px;
+
+    border: 1px solid blue;
+
+    transition: 300ms;
+}
+
+#CreateBtn:hover {
+    background: blue;
+    color: white;
+}
+
 .CloseBtn {
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
