@@ -49,10 +49,12 @@ const Header:FC<NavbarObjmodel> = ( {navbarObj} ) => {
                 <ul className='HeaderNavbar'>
                     {navbarObj.firstUl ? (
                         <ul className='FirstHeaderList'>
-                            <li className='HeaderLogo'><img src={logo} /></li>
-                            <li className='HeaderGoBack'>
-                                <button id='CreateBtn' onClick={() => navigate(pageNamelink)}>Назад</button>
-                            </li>
+                            <li className='HeaderLogo' onClick={() => navigate('/mainpage')}><img src={logo} /></li>
+                            {navbarObj.pageName == 'Homepage' ? null : (
+                                <li className='HeaderGoBack'>
+                                    <button id='CreateBtn' onClick={() => navigate(pageNamelink)}>Назад</button>
+                                </li>
+                            )}
                         </ul>
                     ) : (
                         <li className='HeaderLogo'><img src={logo} /></li>
