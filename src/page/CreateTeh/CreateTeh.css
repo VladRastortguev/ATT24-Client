@@ -37,3 +37,145 @@
 .CreaeteInputs {
     margin-top: 20px;
 }
+
+/* .CreateHeaderNavList {
+    list-style: none;
+    background-color: blue;
+    width: 200px;
+    border: 1px solid black;
+    border-bottom: none;
+    color: #fff;
+}
+
+.CreateHeaderNavList li {
+    border-bottom: 1px solid black;
+    position: relative; 
+}
+
+.CreateHeaderNavList li:hover {
+    background-color: black;
+}
+
+.CreateHeaderNavList li:hover ul {
+    display: block;
+}
+
+.CreateHeaderNavList li:hover ul li {
+    display: none;
+}
+
+.CreateHeaderNavList li a {
+    color: #fff;
+    padding: 10px 20px;
+    display: block;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.CreateHeaderNavList li a:hover {
+    background-color: black;
+    color: #fff;
+}
+
+.CreateHeaderNavList li ul {
+    position: absolute;
+    left: 200px;
+    top: 0px;
+    display: none;
+} */
+
+
+.CreateHeaderNavList {
+    display: inline-block;
+    padding: 16px 170px;
+
+    border: 1px solid black;
+
+    position: relative;
+}
+
+.unShowFisrtLevel div {
+    display: none;
+}
+
+
+.ShowFisrtLevel div {
+    display: inline-block;
+
+    position: absolute;
+
+    bottom: -8px;
+    left: 0;
+    /* bottom: 500px; */
+
+    height: 500px;
+    /* width: 500px; */
+
+    border: 1px solid black;
+}
+
+.ShowFisrtLevel div li {
+    /* border: 1px solid red; */
+    background-color: #0074e0;
+    position: relative;
+    padding: 10px 10px 10px 3px;
+
+    color: white;
+
+    border: 1px solid white;
+    border-bottom: none;
+
+    font-family: 'Arial' sans-serif;
+}
+
+.ShowFisrtLevel div li ul li:hover {
+    cursor: pointer;
+    opacity: 80%;
+}
+
+.ShowFisrtLevel div li ul {
+    position: absolute;
+    top: -1px;
+}
+
+.CreateBigSetting {
+    right: -389px;
+    z-index: 999;
+}
+
+.CreateSettingNoWe {
+    right: -315px;
+    z-index: 998;
+}
+
+.CreateServiceList {
+    right: -216px;
+    z-index: 997;
+}
+
+.CreateServiceListNoWe {
+    right: -208px;
+    z-index: 996;
+}
+
+.CreateError {
+    right: -268px;
+    z-index: 995;
+}
+
+.unShowSecondLevel {
+    display: none;
+} 
+
+.showSecondLevel {
+    display: block;
+}
+
+.textOnUl {
+    padding: 9px 0;
+    width: 340px !important;
+}
+
+.textOnUl p {
+    padding-left: 3px;
+}

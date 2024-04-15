@@ -23,6 +23,15 @@ const CreateTeh:FC = () => {
     const [urgency, setUrgancy]               = useState("")
     const [urgencyDescr, setUrgancyDescr]     = useState("")
     const [description, setDescription]       = useState("")
+    
+    const [showFirstLevel, unShowFirstLevel] = useState(false)
+
+    const [showSecondLevelSetting, setShowSecondLevelSetting] = useState(false)
+    const [showSecondLevelSettingNoWe, setShowSecondLevelSettingNoWe] = useState(false)
+    const [showSecondLevelService, setShowSecondLevelService] = useState(false)
+    const [showSecondLevelServiceNoWe, setShowSecondLevelServiceNoWe] = useState(false)
+    const [showSecondLevelError, setShowSecondLevelError] = useState(false)
+
 
     const API_TASKS = 'http://192.168.2.26:35421/itil_att/hs/taskapi/settask'
 
@@ -211,65 +220,259 @@ const CreateTeh:FC = () => {
                             </div>
 
                             <div>
-                                <p className='CreateDescriptionTitel'>Опишите Вашу задачи:</p>
+                                <p className='CreateDescriptionTitel'>Опишите Вашу задачу:</p>
                             </div>
                         </div>
 
                         <div className={`CreateOnlyInputBlock ${store.isAuth ? 'CreateInputBlockAuth' : 'CreateInputBlockNoAuth'}`}>
                             <div>
-                                <select 
-                                    className='CreatePodService'
-                                    value={podService}
-                                    onChange={(e) => setPodService(e.target.value)}>
-                            
-                                    <ul>
-                                        <li><a>Подготовка</a>
-                                            <ul>
-                                                <option value="Подготовка электронных карт доступа">Подготовка электронных карт доступа</option>
-                                                <option value="Подготовка нового копьютера">Подготовка нового копьютера</option>
+                                <ul className={`CreateHeaderNavList ${showFirstLevel ? 'ShowFisrtLevel' : 'unShowFisrtLevel'} ${podService == '' ? 'noTextOnUl' : 'textOnUl'}`} 
+                                    onClick={() => unShowFirstLevel(true)}
+                                    onMouseLeave={() => unShowFirstLevel(false)}>
+                                        
+                                    <p>{podService}</p>
+
+                                    <div>
+                                        <li
+                                            onMouseEnter={() => setShowSecondLevelSetting(true)}
+                                            onMouseLeave={() => setShowSecondLevelSetting(false)}><a>Настройки</a>
+
+                                            <ul 
+                                                className={`CreatePodNavList CreateBigSetting ${showSecondLevelSetting ? 'showSecondLevel' : 'unShowSecondLevel'}`}
+                                                onMouseEnter={() => setShowSecondLevelSetting(true)}
+                                                onMouseLeave={() => setShowSecondLevelSetting(false)}
+                                                >                                        
+                                                
+                                                <li
+                                                    onClick={(event) => { 
+                                                            event.stopPropagation()
+                                                            unShowFirstLevel(false)
+                                                            setPodService('Подготовка электронных карт доступа')
+                                                        }
+                                                    }
+                                                ><a
+                                            
+                                                >Подготовка электронных карт доступа</a></li>
+                                                <li
+                                                    onClick={(event) => { 
+                                                        event.stopPropagation()
+                                                        unShowFirstLevel(false)
+                                                        setPodService('Создание кода отпечатков пальцев')
+                                                    }
+                                                }
+                                                ><a>Создание кода отпечатков пальцев</a></li>
+                                                <li
+                                                    onClick={(event) => { 
+                                                        event.stopPropagation()
+                                                        unShowFirstLevel(false)
+                                                        setPodService('Настройки прав доступа в общие папки')
+                                                    }
+                                                }
+                                                ><a>Настройки прав доступа в общие папки</a></li>
+                                                <li
+                                                    onClick={(event) => { 
+                                                        event.stopPropagation()
+                                                        unShowFirstLevel(false)
+                                                        setPodService('Создание почты')
+                                                    }
+                                                }
+                                                ><a>Создание почты</a></li>
+                                                <li
+                                                    onClick={(event) => { 
+                                                        event.stopPropagation()
+                                                        unShowFirstLevel(false)
+                                                        setPodService('Настройка принтера')
+                                                    }
+                                                }
+                                                ><a>Настройка принтера</a></li>
+                                                <li
+                                                    onClick={(event) => { 
+                                                        event.stopPropagation()
+                                                        unShowFirstLevel(false)
+                                                        setPodService('Установка программного обеспечения')
+                                                    }
+                                                }
+                                                ><a>Установка программного обеспечения</a></li>
+                                                <li
+                                                    onClick={(event) => { 
+                                                        event.stopPropagation()
+                                                        unShowFirstLevel(false)
+                                                        setPodService('Настройка удаленного доступа')
+                                                    }
+                                                }
+                                                ><a>Настройка удаленного доступа</a></li>
+                                                <li
+                                                    onClick={(event) => { 
+                                                        event.stopPropagation()
+                                                        unShowFirstLevel(false)
+                                                        setPodService('Настройка сканера')
+                                                    }
+                                                }
+                                                ><a>Настройка сканера</a></li>
+                                                <li
+                                                    onClick={(event) => { 
+                                                        event.stopPropagation()
+                                                        unShowFirstLevel(false)
+                                                        setPodService('Подготовка нового компьютера')
+                                                    }
+                                                }
+                                                ><a>Подготовка нового компьютера</a></li>
+                                                <li
+                                                    onClick={(event) => { 
+                                                        event.stopPropagation()
+                                                        unShowFirstLevel(false)
+                                                        setPodService('Установка операционной системы')
+                                                    }
+                                                }
+                                                ><a>Установка операционной системы</a></li>
+                                                <li
+                                                    onClick={(event) => { 
+                                                        event.stopPropagation()
+                                                        unShowFirstLevel(false)
+                                                        setPodService('Настройка почты на телефон')
+                                                    }
+                                                }
+                                                ><a>Настройка почты на телефон</a></li>
+                                                <li
+                                                    onClick={(event) => { 
+                                                        event.stopPropagation()
+                                                        unShowFirstLevel(false)
+                                                        setPodService('Настройка почты на рабочий компьютер')
+                                                    }
+                                                }
+                                                ><a>Настройка почты на рабочий компьютер</a></li>
+                                                <li
+                                                    onClick={(event) => { 
+                                                        event.stopPropagation()
+                                                        unShowFirstLevel(false)
+                                                        setPodService('Блокировка почты уволенного сотрудника')
+                                                    }
+                                                }
+                                                ><a>Блокировка почты уволенного сотрудника</a></li>
+                                                <li
+                                                    onClick={(event) => { 
+                                                        event.stopPropagation()
+                                                        unShowFirstLevel(false)
+                                                        setPodService('Блокировка карты доступа уволенного сотрудника')
+                                                    }
+                                                }
+                                                ><a>Блокировка карты доступа уволенного сотрудника</a></li>
+                                                <li
+                                                    onClick={(event) => { 
+                                                        event.stopPropagation()
+                                                        unShowFirstLevel(false)
+                                                        setPodService('Настройка доступа в 1С')
+                                                    }
+                                                }
+                                                ><a>Настройка доступа в 1С</a></li>
                                             </ul>
                                         </li>
 
-                                        <li><a>Создание</a>
-                                            <ul>
-                                                <option value="Создание кода отпечатков пальцев">Создание кода отпечатков пальцев</option>
-                                                <option value="Создание почты">Создание почты</option>
+                                        <li
+                                            onMouseEnter={() => setShowSecondLevelSettingNoWe(true)}
+                                            onMouseLeave={() => setShowSecondLevelSettingNoWe(false)}><a>Настройки не зависящие от нас</a>
+
+                                            <ul className={`CreatePodNavList CreateSettingNoWe ${showSecondLevelSettingNoWe ? 'showSecondLevel' : 'unShowSecondLevel'}`}>
+                                                <li
+                                                    onClick={(event) => { 
+                                                        event.stopPropagation()
+                                                        unShowFirstLevel(false)
+                                                        setPodService('Настройка камер на рабочий компьютер')
+                                                    }
+                                                }
+                                                ><a>Настройка камер на рабочий компьютер</a></li>
+                                                <li
+                                                    onClick={(event) => { 
+                                                        event.stopPropagation()
+                                                        unShowFirstLevel(false)
+                                                        setPodService('Настройка камер на личный телефон')
+                                                    }
+                                                }
+                                                ><a>Настройка камер на личный телефон</a></li>
                                             </ul>
                                         </li>
 
-                                        <li><a>Настройка</a>
-                                            <ul>
-                                                <option value="Настройки прав доступа в общие папки">Настройки прав доступа в общие папки</option>
-                                                <option value="Настройка принтера">Настройка принтера</option>
-                                                <option value="Настройка удаленного доступа">Настройка удаленного доступа</option>
-                                                <option value="Настройка сканера">Настройка сканера</option>
-                                                <option value="Настройка почты на телефон">Настройка почты на телефон</option>
-                                                <option value="Настройка почты на рабочий компьютер">Настройка почты на рабочий компьютер</option>
-                                                <option value="Настройка доступа в 1С">Настройка доступа в 1С</option>
-                                                <option value="Настройка камер на рабочий компьютер">Настройка камер на рабочий компьютер</option>
-                                                <option value="Настройка камер на личный телефон">Настройка камер на личный телефон</option>
+                                        <li
+                                            onMouseEnter={() => setShowSecondLevelService(true)}
+                                            onMouseLeave={() => setShowSecondLevelService(false)}><a>Обслуживание</a>
+
+                                            <ul className={`CreatePodNavList CreateServiceList ${showSecondLevelService ? 'showSecondLevel' : 'unShowSecondLevel'}`}>
+                                                <li
+                                                    onClick={(event) => { 
+                                                        event.stopPropagation()
+                                                        unShowFirstLevel(false)
+                                                        setPodService('Профилактика компьютера')
+                                                    }
+                                                }
+                                                ><a>Профилактика компьютера</a></li>
                                             </ul>
                                         </li>
 
-                                        <li><a>Установка</a>
-                                            <ul>
-                                                <option value="Установка операционной системы">Установка операционной системы</option>
-                                                <option value="Установка программного обеспечения">Установка программного обеспечения</option>
+                                        <li
+                                            onMouseEnter={() => setShowSecondLevelServiceNoWe(true)}
+                                            onMouseLeave={() => setShowSecondLevelServiceNoWe(false)}><a>Обслуживание не зависящее от нас</a>
+
+                                            <ul className={`CreatePodNavList CreateServiceListNoWe ${showSecondLevelServiceNoWe ? 'showSecondLevel' : 'unShowSecondLevel'}`}>
+                                                <li
+                                                    onClick={(event) => { 
+                                                        event.stopPropagation()
+                                                        unShowFirstLevel(false)
+                                                        setPodService('Ремонт оргтехники')
+                                                    }
+                                                }
+                                                ><a>Ремонт оргтехники</a></li>
+                                                <li
+                                                    onClick={(event) => { 
+                                                        event.stopPropagation()
+                                                        unShowFirstLevel(false)
+                                                        setPodService('Закупка оргтехники')
+                                                    }
+                                                }
+                                                ><a>Закупка оргтехники</a></li>
+                                                <li
+                                                    onClick={(event) => { 
+                                                        event.stopPropagation()
+                                                        unShowFirstLevel(false)
+                                                        setPodService('Профилактика оргтехники')
+                                                    }
+                                                }
+                                                ><a>Профилактика оргтехники</a></li>                                    
+                                                <li
+                                                    onClick={(event) => { 
+                                                        event.stopPropagation()
+                                                        unShowFirstLevel(false)
+                                                        setPodService('Заправка картриджей')
+                                                    }
+                                                }
+                                                ><a>Заправка картриджей</a></li>
                                             </ul>
                                         </li>
 
-                                        <li><a>Блокировка</a>
-                                            <ul>
-                                                <option value="Блокировка почты уволенного сотрудника">Блокировка почты уволенного сотрудника</option>
-                                                <option value="Блокировка карты доступа уволенного сотрудника">Блокировка почты уволенного сотрудника</option>
+                                        <li
+                                            onMouseEnter={() => setShowSecondLevelError(true)}
+                                            onMouseLeave={() => setShowSecondLevelError(false)}><a>Сбои</a>
+
+                                            <ul className={`CreatePodNavList CreateError ${showSecondLevelError ? 'showSecondLevel' : 'unShowSecondLevel'}`}>
+                                                <li
+                                                    onClick={(event) => { 
+                                                        event.stopPropagation()
+                                                        unShowFirstLevel(false)
+                                                        setPodService('Сбой в работе электронной почты')
+                                                    }
+                                                }
+                                                ><a>Сбой в работе электронной почты</a></li>
+                                                <li
+                                                    onClick={(event) => { 
+                                                        event.stopPropagation()
+                                                        unShowFirstLevel(false)
+                                                        setPodService('Сбой при подключении к 1С')
+                                                    }
+                                                }
+                                                ><a>Сбой при подключении к 1С</a></li>
                                             </ul>
                                         </li>
-
-                                        <li><a>Обслуживание</a>
-
-                                        </li>
-                                    </ul>
-                                </select>
+                                    </div>
+                                </ul>                                    
                             </div>
 
                             <div>

@@ -79,6 +79,17 @@ const Mainpage = () => {
         changeBurger: null 
     }
 
+    // async function useNavigateFunc() {
+    //     () => navigate('/')
+    // }
+
+    // if (!store.isAuth) {
+    //     useEffect(() => {
+    //       useNavigateFunc()
+    //     }, [])
+    // }
+    
+
   return (
     <div className='MainpageAllContainer'>
         <Header navbarObj={navbarObj} />
