@@ -18,6 +18,7 @@ const MyTask = () => {
     const [taskFilter, setTaskFilter] = useState("Я постановщик")
     const [showFilter, setShowFilter] = useState(false)
     const [taskArr, setTaskArr] = useState<OneTaskInterface[]>([])
+    const [taskArrInitiator, setTaskArrInitiator] = useState<OneTaskInterface[]>([])
 
     async function MytaskGetTask() {
         store.setLoading(true)
@@ -40,6 +41,12 @@ const MyTask = () => {
             console.log(responce);
 
             setTaskArr(responce.data)
+
+            taskArr.map((item, index) => {
+                if (String(item.Initiator) == String(localStorage.getItem('UserName'))) {
+                    taskArrInitiator.push(item)
+                }
+            })
         } catch (e) {
             console.log(e);
         } finally {
@@ -55,9 +62,12 @@ const MyTask = () => {
         firstUl: true,
         secondUl: true,
         manyLink: 3,
-        thirdUl: false,
-        thirdUlAsBurger: true,
-        getOut: false,
+        thirdUl: true,
+        thirdUlAsBurger: false,
+        thirdUlAsTaskNews: true,
+        thirdUlObjTask: taskArr,
+        thirdUlObjTaskInit: taskArrInitiator,
+        getOut: true,
         getWelcom: false,
         pageName: 'Mytask',
         lastLiEmpty: false,
