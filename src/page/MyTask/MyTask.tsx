@@ -41,12 +41,6 @@ const MyTask = () => {
             console.log(responce);
 
             setTaskArr(responce.data)
-
-            taskArr.map((item, index) => {
-                if (String(item.Initiator) == String(localStorage.getItem('UserName'))) {
-                    taskArrInitiator.push(item)
-                }
-            })
         } catch (e) {
             console.log(e);
         } finally {
@@ -57,6 +51,20 @@ const MyTask = () => {
     useEffect(() => {
         MytaskGetTask()
     }, [])
+
+    useEffect(() => {
+        console.log(taskArr);
+        
+
+        taskArr.map((item, index) => {
+            if (String(item.Initiator) === String(localStorage.getItem('UserName'))) {
+                taskArrInitiator.push(item)
+            }
+        })
+
+        console.log(taskArrInitiator);
+        
+    }, [taskArr])
 
     const navbarObj = {
         firstUl: true,
