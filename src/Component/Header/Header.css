@@ -71,3 +71,19 @@ button {
 
     margin-bottom: 7.5px;
 }
+
+.taskListInit {
+    display: flex;
+}
+
+.taskListInit ul {
+    margin-right: 20px;
+}
+
+.taskListInit ul li {
+    color: white;
+}
+
+.taskListSetting {
+    margin-left: 99px !important;
+}

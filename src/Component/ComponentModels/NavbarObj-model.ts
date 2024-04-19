@@ -1,3 +1,4 @@
+import { OneTaskInterface } from "../../page/DetailsPage/OneTaskInterface";
 import { linkListmodel } from "./LinkList";
 
 interface functionRes {
@@ -11,6 +12,9 @@ export interface NavbarObjmodel{
         manyLink: number;
         thirdUl: boolean;
         thirdUlAsBurger: boolean;
+        thirdUlAsTaskNews: boolean;
+        thirdUlObjTask: OneTaskInterface[] | null;
+        thirdUlObjTaskInit: OneTaskInterface[] | null
         getOut: boolean;
         getWelcom: boolean;
         pageName: string;

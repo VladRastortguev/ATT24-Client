@@ -62,7 +62,7 @@ const Header:FC<NavbarObjmodel> = ( {navbarObj} ) => {
 
                     {store.isAuth ? (
                         navbarObj.secondUl ? (
-                            <ul className='SecondHeaderList'>
+                            <ul className={`SecondHeaderList ${navbarObj.thirdUlAsTaskNews? 'taskListSetting' : ''}`}>
                                 {navbarObj.linkList.map((item, index) => (
                                     String(String(item).split(' ')[1]).substring(0, 1) == '/' ? (
                                         <li className='HeaderLinkItem' key={`Headeritem${index}`} onClick={() => navigate(`${String(item).split(' ')[1]}`)}>{String(item).split(' ')[0]}</li>
@@ -84,7 +84,25 @@ const Header:FC<NavbarObjmodel> = ( {navbarObj} ) => {
                                     <li></li>
                                     <li></li>
                                 </ul>
-                            ) : (null)}
+                            ) : (
+                                navbarObj.thirdUl ? (                                    
+                                    navbarObj.thirdUlAsTaskNews ? (
+                                        <ul className='taskListInit'>
+                                            <ul>
+                                                <li>Общие количество задач: {navbarObj.thirdUlObjTask?.length}</li>
+                                                <li>Количество Ваших задач: {navbarObj.thirdUlObjTaskInit?.length}</li>
+                                            </ul>
+
+                                            <li className='GetLogOutLi'><button className='CloseBtn'>Выйти</button></li>
+                                        </ul>
+                                    ) : (
+                                        <li className='GetLogOutLi'><button className='CloseBtn'>Выйти</button></li>                                            
+                                    )
+                                
+                            ) : (
+                                <li className='GetLogOutLi'><button className='CloseBtn'>Выйти</button></li>
+                            )
+                            )}
                         </ul>
                     ) : (
                         navbarObj.lastLiEmpty ? (

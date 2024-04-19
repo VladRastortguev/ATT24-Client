@@ -87,7 +87,7 @@
 
 .CreateHeaderNavList {
     display: inline-block;
-    padding: 16px 170px;
+    padding: 16px 44.5%;
 
     border: 1px solid black;
 
@@ -118,7 +118,7 @@
     /* border: 1px solid red; */
     background-color: #0074e0;
     position: relative;
-    padding: 10px 10px 10px 3px;
+    padding: 8px 10px 8px 3px;
 
     color: white;
 
@@ -135,7 +135,7 @@
 
 .ShowFisrtLevel div li ul {
     position: absolute;
-    top: -1px;
+    top: -0.5px;
 }
 
 .CreateBigSetting {
